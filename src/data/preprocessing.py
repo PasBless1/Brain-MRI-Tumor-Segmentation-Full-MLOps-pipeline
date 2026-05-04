@@ -37,18 +37,19 @@ def get_classifier_generators(train_df, val_df, test_df, config: dict):
     bs = config["data"]["batch_size"]
     img_size = tuple(config["data"]["image_size"])
 
+    # flow_from_dataframe requires string labels for categorical class_mode
+    train_df = train_df.copy()
+    val_df = val_df.copy()
+    test_df = test_df.copy()
+    for df in [train_df, val_df, test_df]:
+        df["has_mask"] = df["has_mask"].astype(str)
+
     train_aug = ImageDataGenerator(
         rescale=1.0/255, rotation_range=10, width_shift_range=0.1,
         height_shift_range=0.1, shear_range=0.1, zoom_range=0.1,
         horizontal_flip=True, fill_mode="nearest"
     )
     val_aug = ImageDataGenerator(rescale=1.0/255)
-
-    train_df = train_df.copy()
-    val_df = val_df.copy()
-    test_df = test_df.copy()
-    for df in (train_df, val_df, test_df):
-        df["has_mask"] = df["has_mask"].astype(str)
 
     train_gen = train_aug.flow_from_dataframe(train_df, x_col="image_path", y_col="has_mask",
         target_size=img_size, batch_size=bs, class_mode="categorical", shuffle=True)

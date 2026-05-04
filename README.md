@@ -17,7 +17,6 @@ This repository presents a production-grade, end-to-end machine learning pipelin
 
 ## Model Performance
 
-![Model Performance](reports/model_performance.jpg)
 
 | Model | Metric | Score |
 |---|---|---|
@@ -33,7 +32,7 @@ This repository presents a production-grade, end-to-end machine learning pipelin
 
 The figure below presents qualitative segmentation predictions on four representative test samples, juxtaposing ground truth binary masks with ResUNet predictions. The model demonstrates consistent spatial accuracy across diverse tumour morphologies, including small focal lesions (Dice = 0.850), large irregular masses (Dice = 0.962), multi-region lesions (Dice = 0.941), and complex fragmented tumour distributions (Dice = 0.933).
 
-![Segmentation Predictions](reports/segmentation_predictions.jpg)
+![Segmentation Predictions](reports/segmentation_predictions.png)
 
 ---
 
@@ -191,7 +190,41 @@ docker-compose up --build
 
 | Package | Version | Purpose |
 |---|---|---|
-| ResNet50 Classifier | Accuracy | ~80% |
-| ResNet50 Classifier | AUC | ~0.85 |
-| ResUNet Segmentor | Dice Score | ~0.77 |
-| ResUNet Segmentor | Tversky Score | ~0.90 |
+| TensorFlow | 2.x | Model training and inference |
+| OpenCV | 4.x | Image preprocessing and CLAHE |
+| MLflow | 2.x | Experiment tracking and model registry |
+| FastAPI | 0.x | REST API serving |
+| Gradio | 3.x | Interactive demo UI |
+| Evidently | Latest | Data and model monitoring |
+| Pytest | Latest | Unit and integration testing |
+
+---
+
+## Citation
+
+If you use this work, please cite:
+
+```bibtex
+@misc{asare2026mri,
+  author    = {Blessing Asare},
+  title     = {Brain MRI Tumour Detection and Segmentation: An End-to-End MLOps Pipeline},
+  year      = {2026},
+  publisher = {GitHub},
+  url       = {https://github.com/BlessingAsare/mri-brain-tumor-mlops}
+}
+```
+
+---
+
+## Author
+
+**Blessing Asare**
+Master of Digital Health, Technische Hochschule Deggendorf
+Researcher in Medical Image Analysis and Explainable AI
+
+[![GitHub](https://img.shields.io/badge/GitHub-PasBless1-black?logo=github)](https://github.com/PasBless1)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/blessing-asare)
+
+---
+
+*This project is part of an ongoing research programme in deep learning for clinical decision support systems.*
