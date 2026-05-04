@@ -1,0 +1,55 @@
+# ============================================================
+# Global Configuration
+# ============================================================
+project:
+  name: mri-brain-tumor-segmentation
+  version: "1.0.0"
+  mlflow_tracking_uri: "http://localhost:5000"
+  experiment_name: "brain_tumor_segmentation"
+
+paths:
+  raw_data: "data/raw/"
+  processed_data: "data/processed/"
+  models_dir: "models/"
+  logs_dir: "logs/"
+  reports_dir: "reports/"
+
+data:
+  image_size: [256, 256]
+  batch_size: 16
+  train_split: 0.7
+  val_split: 0.15
+  test_split: 0.15
+  seed: 42
+  augmentation: true
+  clahe: true
+
+classifier:
+  backbone: "ResNet50"
+  dense_units: [256, 256]
+  dropout_rate: 0.3
+  learning_rate: 0.0001
+  epochs: 60
+  patience_early_stop: 20
+  patience_reduce_lr: 5
+  lr_reduction_factor: 0.2
+  min_lr: 0.00001
+  weights: "imagenet"
+  freeze_base: true
+  num_classes: 2
+
+segmentation:
+  model: "ResUNet"
+  learning_rate: 0.05
+  epsilon: 0.1
+  epochs: 60
+  patience_early_stop: 20
+  tversky_alpha: 0.7
+  tversky_beta: 0.3
+  tversky_gamma: 0.75
+
+serving:
+  host: "0.0.0.0"
+  port: 8000
+  model_registry_name: "brain_tumor_model"
+  max_batch_size: 8

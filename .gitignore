@@ -1,0 +1,15 @@
+echo "*.keras
+*.h5
+*.pt
+*.pth
+data/raw/
+data/processed/
+mlflow.db
+mlflow_artifacts/
+__pycache__/
+*.pyc
+.pytest_cache/
+logs/
+*.log
+.ipynb_checkpoints/
+venv/" 
