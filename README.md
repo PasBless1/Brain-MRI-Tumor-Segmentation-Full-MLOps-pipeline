@@ -155,7 +155,7 @@ mri-brain-tumor-mlops/
 ### Local Setup
 
 ```bash
-git clone https://github.com/BlessingAsare/mri-brain-tumor-mlops.git
+git clone https://github.com/PasBless1/Brain-MRI-Tumor-Segmentation-Full-MLOps-pipeline.git
 cd mri-brain-tumor-mlops
 python -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
@@ -200,7 +200,7 @@ docker-compose up --build
 
 ---
 
-## Citation
+<!-- ## Citation
 
 If you use this work, please cite:
 
@@ -212,7 +212,7 @@ If you use this work, please cite:
   publisher = {GitHub},
   url       = {https://github.com/BlessingAsare/mri-brain-tumor-mlops}
 }
-```
+``` -->
 
 ---
 
