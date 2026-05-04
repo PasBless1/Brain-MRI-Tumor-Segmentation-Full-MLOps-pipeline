@@ -65,5 +65,5 @@ make gradio
 |---|---|---|
 | ResNet50 Classifier | Accuracy | ~80% |
 | ResNet50 Classifier | AUC | ~0.85 |
-| ResUNet Segmentor | Dice Score | ~0.77 |
-| ResUNet Segmentor | Tversky Score | ~0.90 |
+| ResUNet Segmentor | Dice Score | ~0.92 |
+| ResUNet Segmentor | Tversky Score | ~0.98 |
