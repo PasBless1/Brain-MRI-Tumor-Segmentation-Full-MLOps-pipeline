@@ -17,7 +17,6 @@ This repository presents a production-grade, end-to-end machine learning pipelin
 
 ## Model Performance
 
-
 | Model | Metric | Score |
 |---|---|---|
 | ResNet50 Classifier | Accuracy | ~80% |
@@ -41,6 +40,14 @@ The figure below presents qualitative segmentation predictions on four represent
 To address the clinical imperative for interpretable AI, Gradient-weighted Class Activation Mapping (Grad-CAM) was applied to the ResNet50 classifier. The heatmaps localise discriminative regions within the final convolutional layer (`conv5_block3_out`), providing spatial attribution of the model's classification decision. Activation patterns are consistently concentrated in anatomically plausible regions corresponding to documented tumour locations in the LGG cohort, supporting the trustworthiness of the model's predictions for clinical decision support.
 
 ![Grad-CAM Explainability](reports/gradcam_results.jpg)
+
+---
+
+## Interactive Demo: Gradio UI
+
+The repository includes a Gradio-based web interface that exposes the full two-stage pipeline for interactive experimentation. Users can upload a single FLAIR MRI slice and obtain a binary tumour decision, calibrated probability estimates, and a pixel-wise segmentation overlay. The interface is designed to mimic a lightweight clinical decision support tool that can be used by radiologists to rapidly screen slices and visually verify model behaviour.
+
+![Brain Tumor MRI Analyzer](reports/gradio_ui.jpg)
 
 ---
 
@@ -200,31 +207,16 @@ docker-compose up --build
 
 ---
 
-<!-- ## Citation
-
-If you use this work, please cite:
-
-```bibtex
-@misc{asare2026mri,
-  author    = {Blessing Asare},
-  title     = {Brain MRI Tumour Detection and Segmentation: An End-to-End MLOps Pipeline},
-  year      = {2026},
-  publisher = {GitHub},
-  url       = {https://github.com/BlessingAsare/mri-brain-tumor-mlops}
-}
-``` -->
-
----
-
 ## Author
 
-**Blessing Asare**
-Master of Digital Health, Technische Hochschule Deggendorf
+**Blessing Asare**  
+Master of Digital Health, Technische Hochschule Deggendorf  
 Researcher in Medical Image Analysis and Explainable AI
 
-[![GitHub](https://img.shields.io/badge/GitHub-PasBless1-black?logo=github)](https://github.com/PasBless1)
+[![GitHub](https://img.shields.io/badge/GitHub-PasBless1-black?logo=github)](https://github.com/PasBless1)  
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/blessing-asare)
 
 ---
 
 *This project is part of an ongoing research programme in deep learning for clinical decision support systems.*
+'''
