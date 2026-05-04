@@ -191,41 +191,7 @@ docker-compose up --build
 
 | Package | Version | Purpose |
 |---|---|---|
-| TensorFlow | 2.x | Model training and inference |
-| OpenCV | 4.x | Image preprocessing and CLAHE |
-| MLflow | 2.x | Experiment tracking and model registry |
-| FastAPI | 0.x | REST API serving |
-| Gradio | 3.x | Interactive demo UI |
-| Evidently | Latest | Data and model monitoring |
-| Pytest | Latest | Unit and integration testing |
-
----
-
-## Citation
-
-If you use this work, please cite:
-
-```bibtex
-@misc{asare2026mri,
-  author    = {Blessing Asare},
-  title     = {Brain MRI Tumour Detection and Segmentation: An End-to-End MLOps Pipeline},
-  year      = {2026},
-  publisher = {GitHub},
-  url       = {https://github.com/BlessingAsare/mri-brain-tumor-mlops}
-}
-```
-
----
-
-## Author
-
-**Blessing Asare**
-Master of Digital Health, Technische Hochschule Deggendorf
-Researcher in Medical Image Analysis and Explainable AI
-
-[![GitHub](https://img.shields.io/badge/GitHub-PasBless1-black?logo=github)](https://github.com/PasBless1)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/blessing-asare)
-
----
-
-*This project is part of an ongoing research programme in deep learning for clinical decision support systems.*
+| ResNet50 Classifier | Accuracy | ~80% |
+| ResNet50 Classifier | AUC | ~0.85 |
+| ResUNet Segmentor | Dice Score | ~0.77 |
+| ResUNet Segmentor | Tversky Score | ~0.90 |
